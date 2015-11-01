@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SK Anguar Light Version</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <style>
+        body{
+            padding-left: 25px;
+        }
+        input.form-control{
+            width:200px;
+            float: left;
+            margin-right: 10px;
+        }
+        .list-group {
+            margin-top: 20px;
+            width: 260px;
+        }
+        p{
+            padding:7px 0;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <h1>Angular Light Version Demo</h1>
+</section>
+<section sk-controller="TodoCtrl">
+    <h5>To Do List</h5>
+    <input class="form-control" type="text" sk-model="todo"><button class="btn btn-default" sk-click="add()">Add</button>
+    <ul class="list-group">
+        <li class="list-group-item" sk-repeat="todo in todos" sk-bind="todo"></li>
+    </ul>
+</section>
+<section sk-controller="TwoWayDataBinding">
+    <h5>Two Way Data Binding</h5>
+    <input class="form-control" type="text" sk-model="xyz">
+    <p sk-bind="xyz"></p>
+</section>
+
+<script src="./lib/Utils.js"></script>
+<script src="./lib/Scope.js"></script>
+<script src="./lib/Provider.js"></script>
+<script src="./lib/DOMCompiler.js"></script>
+<script src="lib/directives/sk-click.js"></script>
+<script src="lib/directives/sk-repeat.js"></script>
+<script src="lib/directives/sk-controller.js"></script>
+<script src="lib/directives/sk-bind.js"></script>
+<script src="lib/directives/sk-model.js"></script>
+<script src="./src/app.js"></script>
+</body>
+</html>
